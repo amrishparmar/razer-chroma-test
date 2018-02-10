@@ -30,6 +30,7 @@ class RazerApp():
     def disconnect(self):
         """End connection to the SDK server"""
         self.alive = False
+        self._hb_thread.join()
         requests.delete(self.uri)
 
     def _heartbeat(self):
@@ -40,8 +41,8 @@ class RazerApp():
 
     def _start_heartbeat(self):
         """Start the heartbeat thread to keep the SDK server connection alive"""
-        t = Thread(target=self._heartbeat)
-        t.start()
+        self._hb_thread = Thread(target=self._heartbeat)
+        self._hb_thread.start()
         
 
 def main():
