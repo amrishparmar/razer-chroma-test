@@ -1,5 +1,5 @@
 # Razer Chroma App Test
-Takes an integer representing a BGR colour and sets the keyboard to that that colour until the program is quit.
+Takes an integer representing a BGR colour and sets the keyboard to that colour until the program is quit.
 
 This is a script I was playing with to understand how to work with the Razer Chroma SDK REST API.
 
